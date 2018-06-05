@@ -1,0 +1,31 @@
+#ifndef BROOK_LIB_H
+#define BROOK_LIB_H
+
+#include "third_party/eigen3/Eigen/Dense"
+#include <vector>
+#include <iostream>
+
+namespace Brook {
+    class Graph;
+}
+
+class Brook::Graph {
+public:
+
+    // Default constructor
+    Graph();
+
+    // Class methods
+    Eigen::MatrixXd infer({{infer_param_list_str}});
+    static Eigen::MatrixXd convertToEigenMatrix(std::vector<std::vector<double> >);
+
+private:
+
+    // Member fields
+    {% for field_decl in field_decl_list -%}
+    {{field_decl}}
+    {% endfor %}
+
+};
+
+#endif //BROOK_LIB_H

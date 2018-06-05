@@ -1,0 +1,7 @@
+.idea/
+*.png
+*.iml
+*.time
+*.pyc
+bazel-*
+.DS_Store
